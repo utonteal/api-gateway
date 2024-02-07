@@ -12,9 +12,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+app.get("/", (req, res, next) => {
+    res.send({ message: "Connected To API Gateway" });
+});
+
 app.use(verifyToken)
 app.use((req, res, next) => {
-   
+
 
     console.log('Middleware for all HTTP requests');
     const method = req.method;

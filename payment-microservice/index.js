@@ -4,6 +4,9 @@ const PORT = 3002;
 
 app.use(express.json());
 
+app.get("/payment-microservice", (req, res, next) => {
+  res.send({ message: "Connected To Payment MicroService" });
+});
 
 app.post("/payment-microservice/payment", (req, res, next) => {
   res.send({ message: "Payment Successful", orderId: "or_5454644" });
